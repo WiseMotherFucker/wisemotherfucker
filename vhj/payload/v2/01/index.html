@@ -1,7 +1,3 @@
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-
 <form action="https://askov.viggo.dk/Shared/Events/SaveEvents" class="ajax" method="post" id="ajaxform">
     <input id="CalendarId" name="CalendarId" type="hidden" value="0">
     <input type="hidden" name="IsPrivate" value="true">
@@ -17,21 +13,5 @@
 </form>
 <div id="response"></div>
 <script>
-    function submitForm() {
-            // Serialize form data
-            var formData = $("#ajaxform").serialize();
-            
-            // Send Ajax request
-            $.ajax({
-                type: "POST",
-                url: "https://askov.viggo.dk/Shared/Events/SaveEvents", // Replace with your server-side script URL
-                data: formData,
-                success: function(response) {
-                    // Display response from server
-                    $("#response").html(response);
-                }
-            });
-        }
-    submitForm()
-    //document.getElementById("submit").click()
+    document.getElementById("submit").click()
 </script>

